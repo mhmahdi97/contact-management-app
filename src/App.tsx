@@ -20,13 +20,13 @@ function App() {
           </label>
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-          {/* Pages from child routes render here  */}
           <div className="drawer-content flex flex-col items-center justify-center">
               <h1 className='text-4xl font-semibold mt-12'>Welcome to <span className='text-red-500'>The</span> Dahsboard!!!</h1>
+          {/* Pages from child routes render here  */}
               <Outlet></Outlet>
           </div> 
 
-          {/* sidebar drawer */}
+          {/* sidebar drawer content */}
           <div className="drawer-side">
               <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
               <ul className="menu p-4 w-80 h-full font-semibold bg-base-200 text-base-content">

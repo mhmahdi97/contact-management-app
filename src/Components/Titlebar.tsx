@@ -11,8 +11,8 @@ const Titlebar = () => {
     
 
     return (
-        <div className='h-16 bg-slate-400'>
-            <h1 className='text-white text-5xl text-center'>{title}</h1>
+        <div className='h-10 lg:h-16 bg-slate-400'>
+            <h1 className='text-white text-3xl lg:text-5xl text-center'>{title}</h1>
         </div>
     );
 };
