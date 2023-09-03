@@ -7,8 +7,6 @@ const Titlebar = () => {
 
     const {pathname} = useLocation();
     const title = pathname === '/contacts' ? 'Contacts Page' : 'Charts and Maps Page';
-    console.log(pathname);
-    
 
     return (
         <div className='h-10 lg:h-16 bg-slate-400'>

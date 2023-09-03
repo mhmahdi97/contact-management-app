@@ -8,7 +8,7 @@ function App() {
 
   return (   
     <> 
-    <Titlebar></Titlebar>
+    <Titlebar />
       <div className="drawer lg:drawer-open">
 
         {/* Button for open sidbar in smaller device */}
@@ -29,8 +29,8 @@ function App() {
           {/* sidebar drawer content */}
           <div className="drawer-side">
               <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-              <ul className="menu p-4 w-80 h-full font-semibold bg-base-200 text-base-content">
-                  <h1 className='text-3xl text-center mb-7'>Dashboard Items</h1>
+              <ul className="menu p-4 w-64 h-full font-semibold bg-base-200 text-base-content">
+                  <h1 className='text-3xl text-center mb-7'>Pages</h1>
                   <li><NavLink to="/contacts">Contacts</NavLink></li>
                   <li><NavLink to="/charts-and-maps">Charts and Maps  </NavLink></li>
               </ul>
