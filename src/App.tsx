@@ -1,16 +1,13 @@
-// import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 
 
 function App() {
   
 
-  return (
-    
-      
+  return (   
     <>  
       <div className="drawer lg:drawer-open">
-              {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open Sidebar</label> */}
 
               <label htmlFor="my-drawer-2"  className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                   <span className="sr-only">Open sidebar</span>
@@ -22,20 +19,14 @@ function App() {
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col items-center justify-center">
               <h1 className='text-4xl font-semibold mt-12'>Welcome to <span className='text-red-500'>The</span> Dahsboard!!!</h1>
-              {/* <Outlet></Outlet> */}
+              <Outlet></Outlet>
           </div> 
           <div className="drawer-side">
               <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
               <ul className="menu p-4 w-80 h-full font-semibold bg-base-200 text-base-content">
                   <h1 className='text-3xl text-center mb-7'>Dashboard Items</h1>
-                
-             
-                      
-                          {/* <li><NavLink to="/dashboard/manage-courses">Manage Courses </NavLink></li>
-                          <li><NavLink to="/dashboard/manage-users">Manage Users  </NavLink></li> */}
-                          <li>Menu</li>
-                  
-                 
+                  <li><NavLink to="/contacts">Contacts</NavLink></li>
+                  <li><NavLink to="/charts-and-maps">Charts and Maps  </NavLink></li>
               </ul>
 
               

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ContactPage from "../Components/ContactPage";
+import ChartsAndMaps from "../Components/ChartsAndMaps";
 
 
 const router = createBrowserRouter([
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/charts-and-maps',
-                element:<ContactPage/>
+                element:<ChartsAndMaps />
             }
         ]
     }
