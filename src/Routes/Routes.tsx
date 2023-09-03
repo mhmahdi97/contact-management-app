@@ -14,6 +14,10 @@ const router = createBrowserRouter([
                 element:<ContactPage/>
             },
             {
+                path: '/add-contact',
+                element:<ContactPage/>
+            },
+            {
                 path: '/charts-and-maps',
                 element:<ChartsAndMaps />
             }
