@@ -1,15 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import TextField from "./TextField";
-
 import React, {useState}  from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { addContacts } from "../Redux/features/contactsSlice";
+import { RootState } from "../Redux/store";
+
 
 
 const AddContact = () => {
 
+    const contactsLength = useSelector((store: RootState) => store.contacts.length);
+    
     const navigate = useNavigate();
 
+    const dispatch = useDispatch()
+
     const [values, setValues] = useState({
+        id: 0,
         firstName: '',
         lastName: '',
         email: '',
@@ -18,6 +26,13 @@ const AddContact = () => {
 
     const handleAddContact = () => {
         console.log(values)
+        dispatch(addContacts({
+            id: contactsLength + 1,
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            status: values.status
+        }))
         alert('Contact Added Successfully')
         navigate(-1)
     }
@@ -59,7 +74,7 @@ const AddContact = () => {
                 </div>
             </div>
              
-            <Button onClick={handleAddContact}>Submit</Button>
+            <Button onClick={handleAddContact}>Add  Contact</Button>
         </div>
     );
 };

@@ -1,23 +1,49 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-export interface CounterState {
-  value: number
+interface ContactsState {
+  
+    id: number,
+    firstName: string,
+    lastName: string,
+    email: string,
+    status: string,
+  
+
 }
 
-const initialState: CounterState = {
-  value: 0,
-}
+ const initialState: ContactsState[] = 
+  [
+    {
+      id: 1,
+      firstName: 'Mahmud Hasan',
+      lastName: 'Mahdi',
+      email: 'mahdi@gmail.com',
+      status: 'active'
+    },
+    {
+      id: 2,
+      firstName: 'Rakibul Islam',
+      lastName: 'Shojib',
+      email: 'rakib@gmail.com',
+      status: 'active'
+    }
+  ]
+
 
 export const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: {},
+  initialState,
   reducers: {
-  
+    addContacts: (state, action: PayloadAction<ContactsState>) => {
+      const newContact = action.payload;
+      // state = [...state, action.payload];
+      state.push(newContact);
+      console.log(newContact);
+    }
   },
 })
 
-// Action creators are generated for each case reducer function
-// export const { increment, decrement, incrementByAmount } = contactsSlice.actions
 
-export default contactsSlice.reducer
+export const { addContacts } = contactsSlice.actions;
+
+export default contactsSlice.reducer;

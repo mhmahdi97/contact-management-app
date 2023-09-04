@@ -57,7 +57,7 @@ const EditContact = () => {
                 </div>
             </div>
              
-            <Button onClick={handleEditContact}>Submit</Button>
+            <Button onClick={handleEditContact}>Submit Edit</Button>
         </div>
     );
 };

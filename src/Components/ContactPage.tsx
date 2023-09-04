@@ -1,21 +1,12 @@
+import { useSelector } from "react-redux";
+import type { RootState } from "../Redux/store"; 
 import Button from "./Button";
 import ContactsCard from "./ContactsCard";
 import NoUserCard from "./NoUserCard";
 
 const ContactPage = () => {
-    const contacts = [
-        {   id: 1,
-            firstName: 'Mahmud Hasan',
-            lastName: 'Mahdi',
-            status: 'active'
-        },
-        {   id: 2,
-            firstName: 'Rakibul Islam',
-            lastName: 'Shojib',
-            status: 'active'
-        }
-    ];
-
+    const contacts = useSelector((store: RootState) => store.contacts);
+    console.log(contacts);
 
     return (
         <div className="container mx-auto px-2 max-w-5xl pt-10 md:pt-32">
@@ -25,7 +16,7 @@ const ContactPage = () => {
                     onClick={}
                 >Add Contact</Button>     */}
                 <div className='grid md:grid-cols-2 gap-5'>
-                    {contacts.length ? <>
+                    {contacts ? <>
                         {contacts.map ((contact, index) =>  <ContactsCard 
                             contact ={contact}
                             key={index}
