@@ -8,8 +8,6 @@ import React, {useState}  from 'react';
 const AddContact = () => {
 
     const navigate = useNavigate();
-    console.log(navigate)
-    
 
     const [values, setValues] = useState({
         firstName: '',
@@ -20,7 +18,7 @@ const AddContact = () => {
 
     const handleAddContact = () => {
         console.log(values)
-        alert('Added Contact Successfully')
+        alert('Contact Added Successfully')
         navigate(-1)
     }
 
@@ -51,12 +49,7 @@ const AddContact = () => {
             />
 
             <br />
-{/* 
-             <label className="mb-2 text-base text-gray-800">
-                Remember me
-            </label>
-                <input type="radio" /> */}
-               
+
             <div className="flex gap-3 items-center">
                 <label className="mb-2 text-lg text-gray-800">Status:</label>
                 <div className="w-fit">
@@ -66,10 +59,6 @@ const AddContact = () => {
                 </div>
             </div>
              
-                {/* <label className="form-control">
-                    <input type="radio" name="radio2" />
-                    Radio - checked
-                </label> */}
             <Button onClick={handleAddContact}>Submit</Button>
         </div>
     );
