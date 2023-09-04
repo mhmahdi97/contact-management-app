@@ -15,7 +15,7 @@ const AddContact = () => {
     }
 
     return (
-        <div className="mt-10 mx-w-xl mx-auto">
+        <div className="mt-10 max-w-xl mx-auto">
             <TextField 
                 label= 'First Name:'
                 value={values.firstName}
@@ -29,6 +29,25 @@ const AddContact = () => {
                 onChange={e => setValues({...values, lastName: e.target.value})}
                 inputProps={{type: 'text', placeholder: 'Last Name'}}
             />
+
+            <br />
+{/* 
+             <label className="mb-2 text-base text-gray-800">
+                Remember me
+            </label>
+                <input type="radio" /> */}
+               
+            <div>
+                <p>Status:</p>
+                <input type="radio" name="status" /> Active
+                <br />
+                <input type="radio" name="status" /> Inactive
+            </div>
+             
+                {/* <label className="form-control">
+                    <input type="radio" name="radio2" />
+                    Radio - checked
+                </label> */}
             <Button onClick={handlAddContact}>Submit</Button>
         </div>
     );

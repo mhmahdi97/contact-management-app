@@ -1,10 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import Titlebar from "./Components/Titlebar";
 
 
 
+
 function App() {
-  
+   const {pathname} = useLocation();
+   console.log(pathname)
 
   return (   
     <> 
@@ -21,8 +23,18 @@ function App() {
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
           <div className="drawer-content">
-              {/* <h1 className='text-4xl font-semibold mt-12'>Welcome to <span className='text-red-500'>The</span> Dahsboard!!!</h1> */}
-          {/* Pages from child routes render here  */}
+          
+          {/* App introduction */}
+         {pathname === '/' ? <>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className='text-4xl font-semibold mt-12'>Welcome to the <span className="text-sky-600">Contact Management App</span> with Charts and Maps</h1>
+            <br />
+            <p className="text-lg font-medium text-gray-600 text-center">To see All the contacts please click on the <span className="text-blue-600"><Link to='/contacts'>Contacts</Link></span> button from the sidebar. You can also add contacts from the contacts page</p>
+            <br />
+            <p className="text-lg font-medium text-gray-600 text-center">Also you can see the charts and maps of Covid-19 affected cases by clicking the <span className="text-blue-600"><Link to='/charts-and-maps'>Charts and Maps</Link></span> button from the sidebar</p> 
+          </div>
+         </>: ''} 
+         {/* Pages from child routes render here  */}
               <Outlet></Outlet>
           </div> 
 

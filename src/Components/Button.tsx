@@ -5,9 +5,11 @@ type buttonProps = {
 
 const Button = ({onClick, children}: buttonProps) => {
     return (
-        <div className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 my-10 rounded">
-            
-        </div>
+        <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 my-10 rounded"
+        onClick={onClick}
+        >
+            {children}
+        </button>
     );
 };
 
