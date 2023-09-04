@@ -3,6 +3,7 @@ import App from "../App";
 import ContactPage from "../Components/ContactPage";
 import ChartsAndMaps from "../Components/ChartsAndMaps";
 import AddContact from "../Components/AddContact";
+import EditContact from "../Components/EditContact";
 
 
 const router = createBrowserRouter([
@@ -12,11 +13,15 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/contacts',
-                element:<ContactPage/>
+                element:<ContactPage />
             },
             {
                 path: '/add-contact',
-                element:<AddContact/>
+                element:<AddContact />
+            },
+            {
+                path: '/contacts/edit-contact/:id',
+                element:<EditContact />
             },
             {
                 path: '/charts-and-maps',

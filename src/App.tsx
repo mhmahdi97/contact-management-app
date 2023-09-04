@@ -6,7 +6,6 @@ import Titlebar from "./Components/Titlebar";
 
 function App() {
    const {pathname} = useLocation();
-   console.log(pathname)
 
   return (   
     <> 

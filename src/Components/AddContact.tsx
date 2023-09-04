@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import TextField from "./TextField";
 
@@ -5,14 +6,22 @@ import React, {useState}  from 'react';
 
 
 const AddContact = () => {
+
+    const navigate = useNavigate();
+    console.log(navigate)
+    
+
     const [values, setValues] = useState({
         firstName: '',
         lastName: '',
-        email: ''
+        email: '',
+        status: ''
     })
 
     const handleAddContact = () => {
         console.log(values)
+        alert('Added Contact Successfully')
+        navigate(-1)
     }
 
     return (
@@ -49,12 +58,11 @@ const AddContact = () => {
                 <input type="radio" /> */}
                
             <div className="flex gap-3 items-center">
-                <span className="mb-2 text-lg text-gray-800">Status:</span>
+                <label className="mb-2 text-lg text-gray-800">Status:</label>
                 <div className="w-fit">
-
-                <input type="radio" name="status" /> Active
-                <br />
-                <input type="radio" name="status" /> Inactive
+                    <input type="radio" name="status" value='active' onChange={e => setValues({...values, status: e.target.value})} /> Active
+                    <br />
+                    <input type="radio" name="status" value='inactive' onChange={e => setValues({...values, status: e.target.value})} /> Inactive
                 </div>
             </div>
              

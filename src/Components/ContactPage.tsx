@@ -4,12 +4,12 @@ import NoUserCard from "./NoUserCard";
 
 const ContactPage = () => {
     const contacts = [
-        {
+        {   id: 1,
             firstName: 'Mahmud Hasan',
             lastName: 'Mahdi',
             status: 'active'
         },
-        {   
+        {   id: 2,
             firstName: 'Rakibul Islam',
             lastName: 'Shojib',
             status: 'active'
